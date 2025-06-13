@@ -1,0 +1,40 @@
+.container {
+  position: relative;
+  height: 100vh;
+  background-image: url("https://images.pexels.com/photos/30426673/pexels-photo-30426673/free-photo-of-off-road-vehicle-amongst-kerala-s-palm-trees.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+.logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.survey-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  color: white;
+  background-color: transparent;
+  border: 1.5px solid white;
+  border-radius: .9rem;
+  cursor: pointer;
+  margin-bottom: 50px;
+  transition: background-color 0.3s;
+}
+.survey-button:hover {
+  background-color: #7a7a7a;
+}

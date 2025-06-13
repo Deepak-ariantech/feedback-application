@@ -1,0 +1,91 @@
+<div class="feedback-container">
+  <p class="intro">
+    <i>Hi [Client’s Name]</i>, we hope your recent experience behind the wheel
+    reflected the performance, craftsmanship and innovation that define our
+    vehicles. Your feedback is invaluable in helping us continue to refine every
+    detail of the driving experience.<br />
+    Please take a few moments to share your experience to help us drive
+    excellence.
+  </p>
+
+  <div class="wrapper-container">
+    <!-- Left: Feedback content -->
+    <div class="leftside">
+      <p class="instruction">
+        On a scale of 1 to 5, 1 being the lowest and 5 being the highest, how
+        would you rate us on Driving Experience?
+      </p>
+
+      <div class="leftside-mobile">
+        <div class="test">
+        <div class="mobile-view-wrappper">
+          <div *ngFor="let item of ratings; let i = index" class="rating-row">
+            <span class="rating-label"
+              >({{ "A B C D E F".split(" ")[i] }}) {{ item.label }}</span
+            >
+            <div class="stars" style="padding-left: 1rem">
+              <mat-icon
+                *ngFor="let star of [1, 2, 3, 4, 5]"
+                (click)="setRating(i, star)"
+              >
+                {{ star <= item.value ? "star" : "star_border" }}
+              </mat-icon>
+            </div>
+          </div>
+        </div>
+             <div class="mobile-image-right"></div>
+        </div>
+
+        <div class="comment-section">
+          <label for="comments">Other Comments:</label><br />
+          <textarea
+            id="comments"
+            [(ngModel)]="comment"
+            rows="3"
+            class="textarea"
+          ></textarea>
+        </div>
+
+        <div class="chip-section">
+          <p>Potential of Purchase</p>
+          <mat-chip-listbox>
+            <mat-chip-option
+              *ngFor="let potential of potentialOptions"
+              [selected]="selectedPotential === potential"
+              (click)="selectedPotential = potential"
+              selectable
+              style="background-color: gainsboro; color: rgb(34, 34, 34)"
+            >
+              {{ potential }}
+            </mat-chip-option>
+          </mat-chip-listbox>
+        </div>
+      </div>
+
+      <div class="chip-section">
+        <p>Time Frame</p>
+        <mat-chip-listbox>
+          <mat-chip-option
+            *ngFor="let frame of timeFrames"
+            [selected]="selectedTimeFrame === frame"
+            (click)="selectedTimeFrame = frame"
+            selectable
+            style="background-color: gainsboro; color: rgb(34, 34, 34)"
+          >
+            {{ frame }}
+          </mat-chip-option>
+        </mat-chip-listbox>
+      </div>
+    </div>
+
+    <!-- Right: Image block -->
+    <div class="rightImage"></div>
+  </div>
+
+
+
+</div>
+  
+<div style="display: flex; justify-content: center; align-items: center;">
+<button (click)="submitFeedback()" class="submitFeedback">Submit Feedback</button>
+</div>
